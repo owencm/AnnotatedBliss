@@ -1,0 +1,22 @@
+.annotated-bliss {
+	display:block;
+	margin-bottom: 1em;
+}
+.annotated-bliss .word {
+	float: left;
+	text-align: center;
+	padding-right: 1.5em;
+}
+.annotated-bliss .word .symbol-container {
+	display: block;
+	margin: 0 auto
+}
+.annotated-bliss .word .symbol-container img {
+	margin: 0 1px;
+}
+.annotated-bliss .word .word-text {
+	/* You can specify fonts or style for the text here */
+}
+.annotated-bliss .clear {
+	clear: both;
+}

@@ -1,0 +1,35 @@
+<!doctype>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="annotatedBlissV1.css"></link>
+	<script type="text/javascript" src="annotatedBlissV1.js"></script>
+</head>
+<body>
+	<h1>AnnotatedBliss Docs</h1>
+	<h3>
+		Example
+	</h3>
+	<pre>&lt;div symbolpath=&quot;symbols/&quot; symbolformat=&quot;png&quot;&gt;<br/>	&quot;Welcome&quot;{welcome} &quot;to&quot;{to} &quot;Blissymbols&quot;{language, worldwriting}<br/>&lt;/div&gt;</pre>
+	<div class="annotated-bliss" symbolpath="symbols/" symbolformat="png">
+		"Welcome"{welcome} "to"{to} "Blissymbols"{language, worldwriting}
+	</div>
+	<h3>How to install</h3>
+	<ol>
+		<li>First upload the CSS and Javascript files to your server. </li>
+		<li>Next include the CSS file <a download href="annotatedBlissV1.css">annotatedBlissV1.css</a> in your &lt;head&gt; section with the following code: &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/your/path/to/annotatedBlissV1.css&quot;&gt;&lt;/link&gt;. </li>
+		<li>Then include the Javascript file <a download href="annotatedBlissV1.js">annotatedBlissV1.js</a> in the &lt;head&gt; section with the following code: &lt;script type=&quot;text/javascript&quot; src=&quot;your/path/to/annotatedBlissV1.js&quot;&gt;&lt;/script&gt;</li>
+	</ol>
+	<h3>How to use</h3>
+	<pre>&lt;div class=&quot;annotated-bliss&quot; symbolpath=&quot;symbols/&quot; symbolformat=&quot;png&quot;&gt;<br/>	&quot;Welcome&quot;{welcome} &quot;to&quot;{to} &quot;Blissymbols&quot;{language, worldwriting}<br/>&lt;/div&gt;</pre>
+	<p>
+		Annotated Bliss should be written within the div tags with attributes to tell the code where to locate the images (often something like "hosted/images/") and what format they are in.
+	</p>
+	<p>Annotated Bliss is written in the format "text"{imagename}. Note that the imagename shouldn't include the extension (.jpg, .png, .gif etc). To use multiple symbols concatenated simply provide them with a comma in between. For example "Blissymbols"{world, writing}</p>
+	<p>To include text without a symbol (for any reason) create an image which is the same height as the other symbols but is blank and use that as the associated symbol. Equivalently Bliss without text can be done in the obvious way: ""{symbol}.</p>
+	<p>Note that providing an invalid string will fire an error alert when you open the page. Also note that all Blissymbols being used must be the same height for the alignment to render correctly.</p>
+	<h3>Credit</h3>
+	<p>
+		AnnotatedBliss was written by Owen Campbell-Moore (owencmoore@gmail.com) for the good of Bliss on the internet.
+	</p>
+</body>
+</html>
