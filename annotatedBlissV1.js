@@ -92,8 +92,8 @@ function renderAllBliss() {
 							throw "Error: Expected some bliss at position "+ i;
 						}
 						break;
-					case 3: //Reading the bliss link
-                        if (input == " ") { //If we see a space then we've seen one blissymbol and are waiting for the concatenated symbol
+					case 3: //Reading the names of the blissymbols
+                        if (input == " ") { //If we see a space then we've seen one blissymbol (eat it) and are waiting for the concatenated symbol
                             blissSet.push(currentBliss);
                             currentBliss = "";
                             i++;
@@ -110,7 +110,6 @@ function renderAllBliss() {
                             i++;
 						}
 						break;
-                    case 4: //Swallow any 
 				}
 			}
 			if (state != 0) {
