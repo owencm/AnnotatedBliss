@@ -1,4 +1,4 @@
 AnnotatedBliss
 ==============
 
-Javascript library for writing Blissymbols online with annotations in text
+Please see example.html for all instructions and usage.
