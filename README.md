@@ -1,4 +1,6 @@
 AnnotatedBliss
 ==============
 
-Javascript library for writing Blissymbols online with annotations in text
+AnnotatedBliss allows you to write Blissymbols in the format "I"{I} "like"{feeling uparrow} "school"{house give knowledge} and renders them with the plaintext beneath the symbols.
+
+Please clone in and see example.html for all instructions and usage.
