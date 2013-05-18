@@ -7,10 +7,10 @@
 	This is an example of what to write in your HTML:
 
 	<abliss class="annotated-bliss" symbolpath="symbols/" symbolformat="png">
-		"Welcome"{welcome} "to"{to} "Blissymbols"{bliss}
+		"Welcome" (welcome) "to" (to) "Blissymbols" (world writing)
 	</abliss>
 
-	The text in {} must be the name of the image without the extension (format), for example {bliss} would indicate an image at symols/bliss.png with the above example. 
+	The text in () must be the name of the image without the extension (format), for example {bliss} would indicate an image at symols/bliss.png with the above example. 
 
 
     Permission is hereby granted, free of charge, to any person obtaining
@@ -82,8 +82,8 @@ function renderAllBliss() {
                             i++;
 						}
 						break;
-					case 2: //Waiting for the bliss url to start
-						if (input == "{") {
+					case 2: //Waiting for the bliss symbol name to start
+						if (input == "(") {
 							state = 3;
                             i++;
                         } else if (input == " "){ //ignore spaces
@@ -99,7 +99,7 @@ function renderAllBliss() {
                             blissSet.push(currentBliss);
                             currentBliss = "";
                             i++;
-                        } else if (input == "}") {
+                        } else if (input == ")") {
                             blissSet.push(currentBliss);
 							sections.push({text: currentText, bliss: blissSet});
                             blissSet = [];
