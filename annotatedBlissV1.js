@@ -89,13 +89,11 @@ function renderAllBliss() {
                         } else if (input == " "){ //ignore spaces
                             i++
 						} else {
-							throw "Error: A bliss word is missing";
+							throw "Error: Expected some bliss at position "+ i;
 						}
 						break;
 					case 3: //Reading the bliss link
-                        if (input == " ") { //Ignore spaces
-                            i++;
-                        } else if (input == ",") { //If we see a comma then we've seen one blissymbol and are waiting for the concatenated symbol
+                        if (input == " ") { //If we see a space then we've seen one blissymbol and are waiting for the concatenated symbol
                             blissSet.push(currentBliss);
                             currentBliss = "";
                             i++;
@@ -112,6 +110,7 @@ function renderAllBliss() {
                             i++;
 						}
 						break;
+                    case 4: //Swallow any 
 				}
 			}
 			if (state != 0) {
