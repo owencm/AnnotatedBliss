@@ -7,10 +7,10 @@
 	This is an example of what to write in your HTML:
 
 	<abliss class="annotated-bliss" symbolpath="symbols/" symbolformat="png">
-		"Welcome" (welcome) "to" (to) "Blissymbols" (world writing)
+		"Welcome" {welcome} "to" {to} "Blissymbols" {world writing}
 	</abliss>
 
-	The text in () must be the name of the image without the extension (format), for example {bliss} would indicate an image at symols/bliss.png with the above example. 
+	The text in {} must be the name of the image without the extension (format), for example {bliss} would indicate an image at symols/bliss.png with the above example. 
 
 
     Permission is hereby granted, free of charge, to any person obtaining
@@ -83,7 +83,7 @@ function renderAllBliss() {
 						}
 						break;
 					case 2: //Waiting for the bliss symbol name to start
-						if (input == "(") {
+						if (input == "{") {
 							state = 3;
                             i++;
                         } else if (input == " "){ //ignore spaces
@@ -97,7 +97,7 @@ function renderAllBliss() {
                             blissSet.push(currentBliss);
                             currentBliss = "";
                             i++;
-                        } else if (input == ")") {
+                        } else if (input == "}") {
                             blissSet.push(currentBliss);
 							sections.push({text: currentText, bliss: blissSet});
                             blissSet = [];
@@ -119,7 +119,7 @@ function renderAllBliss() {
 			alert(e);
 		}
 		console.log("Decoded some bliss and found " + JSON.stringify(sections));
-		var html = "<div>";
+		var html = "";
 		for (var i = 0; i < sections.length; i++) {
 			section = sections[i];
 			html += '<div class="word"><div class="symbol-container">';
@@ -129,7 +129,6 @@ function renderAllBliss() {
             }
             html +='</div><div class="word-text">' + section.text + '</div></div>';
 		}
-		html += '</div><div class="clear"></div>';
 		return html; 
 	}
 }

@@ -1,9 +1,8 @@
 .annotated-bliss {
-	display:block;
 	margin-bottom: 1em;
 }
 .annotated-bliss .word {
-	float: left;
+	display: inline-block;
 	text-align: center;
 	padding-right: 1.5em;
 }
@@ -16,7 +15,4 @@
 }
 .annotated-bliss .word .word-text {
 	/* You can specify fonts or style for the text here */
-}
-.annotated-bliss .clear {
-	clear: both;
 }
