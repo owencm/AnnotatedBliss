@@ -1,0 +1,21 @@
+.abliss-clause {
+	display: inline-block;
+	text-align: center;
+	padding: 0 0.75em; /* This AND ANOTHER VARIABLE BELOW is the spacing between clauses */
+	zoom: 1;
+	*display: inline;
+}
+/*.abliss-clause + .abliss-clause {
+	padding-left: 0;
+	padding-right: 1em; /* This is also the spacing between bliss clauses */
+}*/
+.abliss-clause .symbol-container {
+	display: block;
+	margin: 0 auto
+}
+.abliss-clause .symbol-container img {
+	margin: 0 1px; /* This is the spacing between symbols in the same clause */
+}
+.abliss-clause .clause-text {
+	/* You can specify fonts or style for the annotation text here */
+}
