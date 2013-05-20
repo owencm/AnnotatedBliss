@@ -34,10 +34,35 @@
 
 */
 
+if (typeof document.getElementsByClassName!='function') {
+    document.getElementsByClassName = function() {
+        var elms = document.getElementsByTagName('*');
+        var ei = new Array();
+        for (i=0;i<elms.length;i++) {
+            if (elms[i].getAttribute('class')) {
+                ecl = elms[i].getAttribute('class').split(' ');
+                for (j=0;j<ecl.length;j++) {
+                    if (ecl[j].toLowerCase() == arguments[0].toLowerCase()) {
+                        ei.push(elms[i]);
+                    }
+                }
+            } else if (elms[i].className) {
+                ecl = elms[i].className.split(' ');
+                for (j=0;j<ecl.length;j++) {
+                    if (ecl[j].toLowerCase() == arguments[0].toLowerCase()) {
+                        ei.push(elms[i]);
+                    }
+                }
+            }
+        }
+        return ei;
+    }
+}
+
 function renderAllBliss() {
 	// Find every section of bliss text to render
 	var inputList = document.getElementsByClassName('annotated-bliss');
-	console.log("Found "+inputList.length+" sections of bliss to convert.")
+	// console.log("Found "+inputList.length+" sections of bliss to convert.")
 	// Loop through and render each
 	for (var i = 0; i < inputList.length; i++) {
 		var inputElement = inputList[i];
@@ -60,8 +85,8 @@ function renderAllBliss() {
 		try {
             var i = 0;
 			while (i < string.length) { //Here we simulate a state machine to parse the text
-                input = string[i];
-                console.log(input);
+                input = string.charAt(i);
+                // console.log(input);
 				switch(state) {
 					case 0: //Waiting for a new word
 						if (input == '"') {
@@ -118,7 +143,7 @@ function renderAllBliss() {
 		} catch (e) {
 			alert(e);
 		}
-		console.log("Decoded some bliss and found " + JSON.stringify(sections));
+		// console.log("Decoded some bliss and found " + JSON.stringify(sections));
 		var html = "";
 		for (var i = 0; i < sections.length; i++) {
 			section = sections[i];
